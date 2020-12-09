@@ -1,3 +1,6 @@
+# Set filename without extension for consistency.
+name: release.changelogs
+
 on:
   push:
     branches:
