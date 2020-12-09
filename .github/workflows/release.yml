@@ -10,12 +10,10 @@ jobs:
     name: create.changelogs
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Initial
-        run: echo $PWD
-        working-directory: git-flow
+        run: This event is a pull request that had an assignee removed.
       
       - name: Create Log
         run: make release
-        working-directory: git-flow
