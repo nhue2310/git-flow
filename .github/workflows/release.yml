@@ -2,9 +2,11 @@
 name: release.changelogs
 
 on:
-  push:
+  pull_request:
     branches:
-      main
+      develop
+    types:
+      opened
 jobs:
   create_change_log:
     name: create.changelogs
