@@ -14,8 +14,8 @@ jobs:
 
       - name: Initial
         run: make install
-        working-directory: ./
+        working-directory: git-flow
       
       - name: Create Log
         run: make release
-        working-directory: ./
+        working-directory: git-flow
