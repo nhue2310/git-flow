@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      main
+jobs:
+  create_change_log:
+    name: create.changelogs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Initial
+        run: make install
+      
+      - name: Create Log
+        run: make release
