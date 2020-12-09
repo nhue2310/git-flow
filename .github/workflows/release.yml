@@ -8,7 +8,7 @@ on:
     types:
       opened
 jobs:
-  create_change_log:
+  test:
     name: create.changelogs
     runs-on: ubuntu-latest
     steps:
