@@ -1,0 +1,30 @@
+# Set filename without extension for consistency.
+name: release.changelogs
+
+on:
+  pull_request:
+    branches:
+      develop
+jobs:
+  test:
+    name: create.changelogs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Initial
+        run: |
+          make install
+
+      - name: Add account
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Create log
+        run: make release
+
+      - name: Publish
+        run: git push
