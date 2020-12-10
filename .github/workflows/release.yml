@@ -24,4 +24,4 @@ jobs:
         run: make release
 
       - name: Publish
-        run: git push --follow-tags origin ${GITHUB_REF##*/}
+        run: git push
