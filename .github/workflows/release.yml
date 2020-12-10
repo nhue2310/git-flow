@@ -14,9 +14,11 @@ jobs:
 
       - name: Initial
         run: |
-          git switch origin/${GITHUB_REF##*/}
+          git switch origin/${BASE_BRANCH}
           make install
-      
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+
       - name: Add account
         run: |
           git config --local user.email "action@github.com"
