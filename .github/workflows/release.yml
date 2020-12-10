@@ -21,9 +21,10 @@ jobs:
           git config --local user.name "GitHub Action"
 
       - name: Create log
-        run: make release
+        run: |
+          git checkout "${GITHUB_REF:11}"
+          make release
 
       - name: Publish
         run: |
-          git commit -m "initial commit"
           git push --follow-tags origin ${GITHUB_REF##*/}
