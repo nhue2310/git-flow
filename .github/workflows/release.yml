@@ -22,7 +22,7 @@ jobs:
 
       - name: Create log
         run: |
-          git checkout "${GITHUB_REF:11}"
+          git checkout "origin/${GITHUB_REF##*/}"
           make release
 
       - name: Publish
