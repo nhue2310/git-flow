@@ -22,3 +22,6 @@ jobs:
 
       - name: Create log
         run: make release
+
+      - name: Publish
+        run: git push --follow-tags origin HEAD && npm publish
