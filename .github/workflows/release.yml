@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Initial
         run: |
-          git switch origin/${{github.base_ref}}
           make install
 
       - name: Add account
