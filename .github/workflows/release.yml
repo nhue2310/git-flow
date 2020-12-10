@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Initial
-        run: This event is a pull request that had an assignee removed.
+        run: make install
       
       - name: Create Log
         run: make release
