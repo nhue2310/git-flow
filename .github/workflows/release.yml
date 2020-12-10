@@ -15,8 +15,10 @@ jobs:
       - name: Initial
         run: make install
       
-      - name: Create Log
+      - name: Add account
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          make release
+
+      - name: Create log
+        run: make release
