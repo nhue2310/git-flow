@@ -22,9 +22,10 @@ jobs:
 
       - name: Create log
         run: |
-          git checkout origin/${GITHUB_REF##*/}
           make release
 
-      - name: Publish
-        run: |
-          git push --follow-tags origin ${GITHUB_REF##*/}
+      - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
