@@ -17,6 +17,6 @@ jobs:
       
       - name: Create Log
         run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        make release
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          make release
