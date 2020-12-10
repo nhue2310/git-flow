@@ -14,10 +14,8 @@ jobs:
 
       - name: Initial
         run: |
-          git switch origin/${BASE_BRANCH}
+          git switch origin/${{github.base_ref}}
           make install
-        env:
-          BASE_BRANCH: ${{ github.base_ref }}
 
       - name: Add account
         run: |
