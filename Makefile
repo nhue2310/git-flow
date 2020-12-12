@@ -11,3 +11,5 @@ ifeq ($(GIT_TAG), 0.0.1)
 else
 	npm run release
 endif
+
+demo:
